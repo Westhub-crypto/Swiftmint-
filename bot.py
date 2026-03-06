@@ -579,19 +579,19 @@ async def main():
 
     app = Application.builder().token(BOT_TOKEN).build()
 
-    app.add_handler(CommandHandler("start",start))
-    app.add_handler(CommandHandler("admin",admin))
-    app.add_handler(CommandHandler("broadcast",broadcast))
-    app.add_handler(CommandHandler("withdrawals",withdrawals))
-    app.add_handler(CommandHandler("addtask",add_task_admin))
-    app.add_handler(CommandHandler("viewtasks",view_tasks))
-    app.add_handler(CommandHandler("approvewithdraw",approve_withdraw))
+    app.add_handler(CommandHandler("start", start))
+    app.add_handler(CommandHandler("admin", admin))
+    app.add_handler(CommandHandler("broadcast", broadcast))
+    app.add_handler(CommandHandler("withdrawals", withdrawals))
+    app.add_handler(CommandHandler("addtask", add_task_admin))
+    app.add_handler(CommandHandler("viewtasks", view_tasks))
+    app.add_handler(CommandHandler("approvewithdraw", approve_withdraw))
 
-    app.add_handler(MessageHandler(filters.TEXT,messages))
+    app.add_handler(MessageHandler(filters.TEXT, messages))
 
     print("SwiftMint Hub Bot Running...")
 
-    app.run_polling()
+    await app.run_polling()
 
 if __name__ == "__main__":
     asyncio.run(main())
