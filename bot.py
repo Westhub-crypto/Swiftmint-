@@ -573,7 +573,9 @@ async def messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # MAIN
 # ==============================
 
-def main():
+import asyncio
+
+async def main():
 
     app = Application.builder().token(BOT_TOKEN).build()
 
@@ -592,4 +594,4 @@ def main():
     app.run_polling()
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
