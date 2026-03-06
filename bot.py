@@ -530,21 +530,24 @@ async def messages(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # MAIN
 # ==============================
 
-async def main():
+def main():
 
     app = Application.builder().token(BOT_TOKEN).build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("admin", admin))
     app.add_handler(CommandHandler("broadcast", broadcast))
+    app.add_handler(CommandHandler("withdrawals", withdrawals))
+    app.add_handler(CommandHandler("addtask", add_task_admin))
+    app.add_handler(CommandHandler("viewtasks", view_tasks))
+    app.add_handler(CommandHandler("approvewithdraw", approve_withdraw))
 
-    app.add_handler(MessageHandler(filters.TEXT, messages))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, messages))
 
-    print("SwiftMint Hub Bot Running...")
+    print("🚀 SwiftMint Hub Bot Running...")
 
-    await app.run_polling()
-
+    app.run_polling()
 
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    main()
