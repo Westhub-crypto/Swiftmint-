@@ -7,7 +7,7 @@ from telegram.ext import Application, CommandHandler, MessageHandler, filters, C
 # CONFIG
 # ==============================
 
-BOT_TOKEN = "PASTE_YOUR_BOT_TOKEN_HERE"
+BOT_TOKEN = "8770195835:AAFlZVpZpTAtJl5NCnJg-DaK2Nk6tQxqG0E"
 
 ADMIN_USERNAME = "Westpablo1"
 ADMIN_PASSWORD = "@Weatpablo"
